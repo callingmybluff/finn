@@ -49,13 +49,3 @@ export const Bars = styled(FaBars)`
     cursor: pointer;
   }
 `
-
-export const Btn = styled(Link)`
-  flex: 1;
-
-  background: hsl(180, 66%, 49%);
-  color: #FFFF;
-  border-radius: 20%;
-  margin: .5rem;
-  padding: .5rem;
-`

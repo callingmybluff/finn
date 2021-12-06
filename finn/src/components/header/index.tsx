@@ -6,8 +6,8 @@ import {
   Bars,
   RightMenu,
   LeftMenu,
-  Btn,
 } from './HeaderElements'
+import { Button } from '../shared'
 
 const Header = () => <Nav>
   <Link to='/'>
@@ -28,9 +28,9 @@ const Header = () => <Nav>
       Login
     </Link>  </LeftMenu>
   <RightMenu>
-    <Btn to='/signup'>
+    <Button to='/signup'>
       Sign Up
-    </Btn>
+    </Button>
   </RightMenu>
 </Nav>
 
