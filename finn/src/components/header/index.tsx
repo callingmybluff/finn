@@ -7,7 +7,7 @@ import {
   RightMenu,
   LeftMenu,
 } from './HeaderElements'
-import { Button } from '../shared'
+import { BigCornerButton as Button } from '../shared'
 
 const Header = () => <Nav>
   <Link to='/'>

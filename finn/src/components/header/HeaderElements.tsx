@@ -11,7 +11,7 @@ export const LeftMenu = styled.div`
   flex: 1 0 auto;
   align-items: left;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: ${props => props.theme.size.mobile}) {
     display: none;
   }
 `
@@ -21,7 +21,7 @@ export const RightMenu = styled.nav`
   flex: 0 0 auto;
   align-items: right;
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: ${props => props.theme.size.mobile}) {
     display: none;
   }
 `
@@ -30,16 +30,16 @@ export const Link = styled(NavLink)`
   flex: 0;
   display: flex;
 
-  color: hsl(0, 0%, 75%);
+  color: ${props => props.theme.color.neutral.gray};
   text-decoration: none;
   padding: 1rem 1rem;
 `
 
 export const Bars = styled(FaBars)`
   display: none;
-  color: hsl(0, 0%, 75%);
+  color: ${props => props.theme.color.neutral.gray};
 
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: ${props => props.theme.size.mobile}) {
     display: block;
     position: absolute;
     top: 0;

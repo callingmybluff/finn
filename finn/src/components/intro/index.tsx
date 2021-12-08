@@ -8,7 +8,7 @@ import {
   Body,
   ButtonContainer,
 } from './IntroElements'
-import { Button } from '../shared'
+import { BigCornerButton as Button } from '../shared'
 
 // Ideally, we would place the text inside `.env`
 const Intro = () => <Container>
