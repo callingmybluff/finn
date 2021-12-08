@@ -6,7 +6,7 @@ import Theme, { ITheme } from './theme'
 import Header from './components/header'
 import Intro from './components/intro'
 import Input from './components/input'
-
+import SecondParagraph from './components/secondParagraph'
 
 const GlobalStyle = createGlobalStyle <{ theme: ITheme }>`
   @font-face {
@@ -26,6 +26,7 @@ function App() {
           <Header />
           <Intro />
           <Input />
+          <SecondParagraph />
         </BrowserRouter>
       </ThemeProvider>
     </div>
