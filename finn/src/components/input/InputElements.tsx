@@ -2,7 +2,16 @@ import Styled from 'styled-components'
 
 import { SmallCornerButton } from '../shared'
 
-export const InputContainer = Styled.div`
+export const Container = Styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: ${props => props.theme.size.margin};
+  @media screen and (max-width: ${props => props.theme.size.mobile}) {
+    margin: ${props => props.theme.size.marginMobile};
+  }
+`
+
+export const FormContainer = Styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -12,9 +21,7 @@ export const InputContainer = Styled.div`
   background-color: ${props => props.theme.color.primary.darkViolet};
   background-size: cover;
   background-image: url('images/bg-shorten-desktop.svg');
-  margin: ${props => props.theme.size.margin};
   @media screen and (max-width: ${props => props.theme.size.mobile}) {
-    margin: ${props => props.theme.size.marginMobile};
     flex-direction: column;
     background-image: url('images/bg-shorten-mobile.svg');
   }
