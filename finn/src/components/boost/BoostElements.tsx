@@ -6,13 +6,19 @@ export const Container = Styled.div`
   align-items: center;
   background-color: ${props => props.theme.color.primary.darkViolet};
   background-size: cover;
-  background-image: url('images/bg-boost-desktop.svg');
   color: white;
+  padding: 1ex;
 
+  padding-top: 4ex;
+  padding-bottom: 4ex;
+  background-image: url('images/bg-boost-desktop.svg');
   @media screen and (max-width: ${props => props.theme.size.mobile}) {
+    padding-top: 8ex;
+    padding-bottom: 8ex;
     background-image: url('images/bg-boost-mobile.svg');
   }
 `
 
 export const Title = Styled.h1`
+  text-align: center;
 `
