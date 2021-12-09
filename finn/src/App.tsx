@@ -9,6 +9,7 @@ import Input from './components/input'
 import SecondParagraph from './components/secondParagraph'
 import Highlights from './components/highlights'
 import Boost from './components/boost'
+import Footer from './components/footer'
 
 const GlobalStyle = createGlobalStyle <{ theme: ITheme }>`
   body {
@@ -34,6 +35,7 @@ function App() {
           <SecondParagraph />
           <Highlights />
           <Boost />
+          <Footer />
         </BrowserRouter>
       </ThemeProvider>
     </div>
