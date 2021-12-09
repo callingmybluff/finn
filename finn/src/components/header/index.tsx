@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../logo.svg'
 import {
   Nav,
   Link,
@@ -11,7 +10,7 @@ import { BigCornerButton as Button } from '../shared'
 
 const Header = () => <Nav>
   <Link to='/'>
-    <img src={logo} alt='Finn Logo' />
+    <img src='images/logo.svg' alt='Logo' />
   </Link>
   <Bars />
   <LeftMenu>
