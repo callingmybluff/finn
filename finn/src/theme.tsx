@@ -24,6 +24,8 @@ const Theme = {
   size: {
     mobile: '375px',
     desktop: '1440px',
+    margin: '50px',
+    marginMobile: '25px',
   }
 }
 

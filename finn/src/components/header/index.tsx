@@ -5,6 +5,8 @@ import {
   Bars,
   RightMenu,
   LeftMenu,
+  BarContainer,
+  LinkText,
 } from './HeaderElements'
 import { BigCornerButton as Button } from '../shared'
 
@@ -12,25 +14,36 @@ const Header = () => <Nav>
   <Link to='/'>
     <img src='images/logo.svg' alt='Logo' />
   </Link>
-  <Bars />
+  <BarContainer>
+    <Bars />
+  </BarContainer>
   <LeftMenu>
     <Link to='/features'>
-      Features
+      <LinkText>
+        Features
+      </LinkText>
     </Link>
     <Link to='/pricing'>
-      Pricing
+      <LinkText>
+        Pricing
+      </LinkText>
     </Link>
     <Link to='/resources'>
-      Resources
+      <LinkText>
+        Resources
+      </LinkText>
     </Link>
-    <Link to='/signin'>
-      Login
-    </Link>  </LeftMenu>
+  </LeftMenu>
   <RightMenu>
+    <Link to='/signin'>
+      <LinkText>
+        Login
+      </LinkText>
+    </Link>
     <Button to='/signup'>
       Sign Up
     </Button>
   </RightMenu>
-</Nav>
+</Nav >
 
 export default Header
