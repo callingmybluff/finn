@@ -1,6 +1,5 @@
 import { ChangeEvent, useState } from "react"
 
-import History from "../history"
 import {
   Container,
   FormContainer,
@@ -34,7 +33,6 @@ const Input = () => {
       </InputContainer>
       <Button onClick={submit} to=''>Shorten It!</Button>
     </FormContainer>
-    <History />
   </Container>
 }
 

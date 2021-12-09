@@ -6,6 +6,7 @@ import Theme, { ITheme } from './theme'
 import Header from './components/header'
 import Intro from './components/intro'
 import Input from './components/input'
+import History from './components/history'
 import SecondParagraph from './components/secondParagraph'
 import Highlights from './components/highlights'
 import Boost from './components/boost'
@@ -35,6 +36,7 @@ function App() {
           <Header />
           <Intro />
           <Input />
+          <History />
           <SecondParagraph />
           <Highlights />
           <Boost />

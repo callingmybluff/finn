@@ -4,6 +4,11 @@ import { SmallCornerButton } from '../shared'
 export const Container = Styled.div`
   display: flex;
   flex-flow: column;
+
+  margin: ${props => props.theme.size.margin};
+  @media screen and (max-width: ${props => props.theme.size.mobile}) {
+    margin: ${props => props.theme.size.marginMobile};
+  }
 `
 
 export const Item = Styled.div`
