@@ -35,9 +35,23 @@ export const Button = Styled(SmallCornerButton)`
   }
 `
 
-export const InputForm = Styled.input`
-  border-radius: 5px;
+export const InputContainer = Styled.div`
+  display: flex;
+  flex-flow: column;
   flex: 1;
+`
+
+export const ErrorText = Styled.div`
+  flex: 1;
+  text-align: left;
+  color: red;
+  font-style: italic;
+  font-weight: ${props => props.theme.font.weight.light};
+  scale: .9;
+`
+
+export const InputField = Styled.input`
+  border-radius: 5px;
   margin: 2ex;
   padding: 2ex;
 
@@ -50,5 +64,12 @@ export const InputForm = Styled.input`
     font-size: ${props => props.theme.font.size};
     font-weight: ${props => props.theme.font.weight.light};
     margin: 4rem;
+  }
+
+  &.wrong {
+    border: 1px solid red;
+    ::placeholder {
+      color: red;
+    }
   }
 `
