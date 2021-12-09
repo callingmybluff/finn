@@ -1,7 +1,7 @@
-import { SmallCornerButton as Button } from "../shared"
 import {
   InputContainer,
   InputForm,
+  Button,
 } from "./InputElements"
 
 const Input = () => <InputContainer>

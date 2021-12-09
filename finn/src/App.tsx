@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle <{ theme: ITheme }>`
     background-color: hsl(257, 7%, 90%);
     font-family: ${props => `${props.theme.font.family}, sans-serif`};
     font-weight: ${props => props.theme.font.weight.heavy};
+    font-size: ${props => props.theme.font.size};
   }
   @font-face {
     src: ${props => `url(${props.theme.font.url})`};
