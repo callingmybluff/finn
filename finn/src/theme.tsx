@@ -2,7 +2,10 @@ const Theme = {
   font: {
     url: 'https://fonts.google.com/specimen/Poppins',
     family: 'Poppins',
-    weight: '700',
+    weight: {
+      light: '500',
+      heavy: '700',
+    },
     size: '18px',
   },
   color: {
@@ -37,7 +40,7 @@ interface ITheme {
 interface IFont {
   url: string
   family: string
-  weight: string
+  weight: IWeight
   size: string
 }
 interface IColor {
@@ -58,10 +61,13 @@ interface INeutral {
   veryDarkBlue: string
   veryDarkViolet: string
 }
-
 interface ISize {
   mobile: string
   desktop: string
+}
+interface IWeight {
+  light: string
+  heavy: string
 }
 
 export default Theme
