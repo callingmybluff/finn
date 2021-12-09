@@ -7,8 +7,12 @@ import Header from './components/header'
 import Intro from './components/intro'
 import Input from './components/input'
 import SecondParagraph from './components/secondParagraph'
+import Highlights from './components/highlights'
 
 const GlobalStyle = createGlobalStyle <{ theme: ITheme }>`
+  body {
+    background-color: hsl(257, 7%, 90%);
+  }
   @font-face {
     src: ${props => `url(${props.theme.font.url})`};
     font-family: ${props => `${props.theme.font.family}, sans-serif`};
@@ -27,6 +31,7 @@ function App() {
           <Intro />
           <Input />
           <SecondParagraph />
+          <Highlights />
         </BrowserRouter>
       </ThemeProvider>
     </div>
