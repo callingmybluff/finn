@@ -1,16 +1,21 @@
 import { Container } from './HistoryElements'
 import HistoryItem from "./HistoryItem"
-import { HistoryM } from './models'
+import { HistoryData, HistoryItemM } from './models'
 
-const History = () => {
-  const model = new HistoryM()
+interface IHistory {
+  list: HistoryItemM[]
+}
+
+const History = ({ list }: IHistory) => {
   return <Container>
     {
-      model
-        .getList()
-        .map((item, index) => <HistoryItem key={index} item={item} />)
+      list.map((item, index) => <HistoryItem key={index} item={item} />)
     }
   </Container>
 }
 
 export default History
+export {
+  HistoryData,
+  HistoryItemM,
+}

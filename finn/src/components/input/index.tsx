@@ -1,5 +1,11 @@
-import { ChangeEvent, useState } from "react"
+import {
+  ChangeEvent,
+  useContext,
+  useState,
+} from "react"
 
+import HistoryDispatch from "../../historyDispatch"
+import { HistoryItemM, HistoryData } from "../history"
 import {
   Container,
   FormContainer,
@@ -12,11 +18,21 @@ import {
 const Input = () => {
   const [input, setInput] = useState('')
   const [error, setError] = useState('')
+  const dispatch = useContext(HistoryDispatch)
 
   const submit = () => {
-    console.log(input)
     if (input.length === 0)
       setError('Please add a link')
+    else
+      if (dispatch)
+        HistoryItemM.fromInput(input)
+          .then(item => {
+            dispatch({
+              type: 'ADD',
+              payload: item,
+            })
+            HistoryData.addItem(item)
+          })
   }
 
   const typing = (event: ChangeEvent<HTMLInputElement>) => {

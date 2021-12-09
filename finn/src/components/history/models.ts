@@ -2,9 +2,12 @@
  * Ideally one would use something like `inversify` for both history and network
  * But this is small project, and it is used in place, so I am gonna skip that
  * If we were to ever test the list, we would need to separate them and use a proper injector
+ * 
+ * Also, subscriper for now, but could be proper state managment
  */
+class HistoryM {
+  private static _instance: HistoryM
 
-export class HistoryM {
   _list: HistoryItemM[] = []
   _loaded: boolean = false
 
@@ -19,7 +22,8 @@ export class HistoryM {
         JSON.parse(historyString).forEach((item: IHistoryItem) => {
           this._list.push(new HistoryItemM(item.old, item.generated));
         });
-      } catch {
+      } catch (e) {
+        console.log('Her ewith error', e)
         this._saveToMemory()
       } finally {
         this._loaded = true
@@ -27,7 +31,7 @@ export class HistoryM {
     return this._list
   }
 
-  constructor() {
+  private constructor() {
     this._load()
   }
 
@@ -38,11 +42,10 @@ export class HistoryM {
       return this._load()
   }
 
-  async addItem(url: string) {
-    return HistoryItemM.fromInput(url)
-      .then(item => this._list.push(item))
-      .then(() => this._saveToMemory())
-      .then(() => this._list)
+  addItem(item: HistoryItemM) {
+    this._list.unshift(item)
+    this._saveToMemory()
+    return this._list
   }
 
   // DB-like
@@ -51,6 +54,12 @@ export class HistoryM {
   }
   _saveToMemory() {
     localStorage.setItem('history', JSON.stringify(this._list))
+  }
+
+  static get Instance() {
+    if (!HistoryM._instance)
+      HistoryM._instance = new HistoryM()
+    return HistoryM._instance
   }
 }
 
@@ -74,7 +83,6 @@ export class HistoryItemM implements IHistoryItem {
     return fetch(`https://api.shrtco.de/v2/shorten?url=${url}`)
       .then(res => res.json())
       .then((res: any) => {
-        console.log(res)
         return new HistoryItemM(url, res.result.full_short_link)
       })
   }
@@ -83,3 +91,6 @@ export class HistoryItemM implements IHistoryItem {
     return this.generated
   }
 }
+
+// Singleton
+export const HistoryData = HistoryM.Instance
