@@ -1,4 +1,3 @@
-import { Dropdown } from 'react-bootstrap'
 import { FaBars } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
@@ -60,6 +59,13 @@ export const Bars = styled(FaBars)`
   cursor: pointer;
 `
 
+export const DropdownDivider = styled.div`
+  flex: 1 0 auto;
+  height: 1px;
+  background-color: ${props => props.theme.color.neutral.gray};
+`
+
+
 export const DropdownContainer = styled.div`
   display: flex;
   flex-flow: column;
@@ -68,19 +74,16 @@ export const DropdownContainer = styled.div`
   width: 80%;
   right: 5%;
   left: 5%;
+  top: 20%;
   padding: 5%;
   position: absolute;
 `
-export const DropdownDivider = styled(Dropdown.Divider)`
-  flex: 1;
-  width: 100%;
+
+export const DropdownItem = styled(Link)`
+  align-self: center;
+  color: white;
 `
 
-export const DropdownItem = styled(Dropdown.Item)`
-  flex: 1;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  padding: 2ex;
-  padding-bottom: 2ex;
+export const DropdownText = styled(LinkText)`
+  margin: 0;
 `

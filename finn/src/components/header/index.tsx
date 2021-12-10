@@ -1,41 +1,18 @@
 import React from 'react'
-import { Dropdown } from 'react-bootstrap'
 
 import {
   Nav,
   Link,
-  Bars,
   RightMenu,
   LeftMenu,
-  BarContainer,
   LinkText,
   DropdownContainer,
-  DropdownItem,
   DropdownDivider,
+  DropdownItem,
+  DropdownText,
 } from './HeaderElements'
 import { BigCornerButton as Button } from '../shared'
-
-type IBarToggle = {
-  children?: React.ReactNode
-  onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {}
-}
-type ICustomMenu = {
-  children?: React.ReactNode
-  style?: React.CSSProperties
-  className?: string
-  labeledBy?: string
-}
-
-const BarToggle = React.forwardRef((props: IBarToggle, ref: React.Ref<HTMLDivElement>) =>
-  <div ref={ref} onClick={props.onClick}><Bars>
-    {props.children}
-  </Bars>
-  </div>),
-  CustomMenu = React.forwardRef((props: ICustomMenu, ref: React.Ref<HTMLDivElement>) => {
-    return <DropdownContainer ref={ref} style={props.style} className={props.className}>
-      {props.children}
-    </DropdownContainer>
-  })
+import Dropmenu from './dropdown'
 
 const linksLeft = [
   {
@@ -66,21 +43,26 @@ const Header = () => <Nav>
   <Link to='/'>
     <img src='images/logo.svg' alt='Logo' />
   </Link>
-  <BarContainer>
-    <Dropdown>
-      <Dropdown.Toggle as={BarToggle}></Dropdown.Toggle>
-      <Dropdown.Menu as={CustomMenu}>
-        {
-          linksLeft.map(link => <DropdownItem href={link.target}>{link.title}</DropdownItem>)
-        }
-        <DropdownDivider />
-        {
-          linksRight.map(link => <DropdownItem href={link.target}>{link.title}</DropdownItem>)
-        }
-        <SigninButton />
-      </Dropdown.Menu>
-    </Dropdown>
-  </BarContainer>
+  <Dropmenu>
+    <DropdownContainer>
+      {
+        linksLeft.map(link => <DropdownItem to={link.target}>
+          <DropdownText>
+            {link.title}
+          </DropdownText>
+        </DropdownItem>)
+      }
+      <DropdownDivider />
+      {
+        linksRight.map(link => <DropdownItem to={link.target}>
+          <DropdownText>
+            {link.title}
+          </DropdownText>
+        </DropdownItem>)
+      }
+      <SigninButton />
+    </DropdownContainer>
+  </Dropmenu>
   <LeftMenu>
     {
       linksLeft.map(link => <Link to={link.target}>
