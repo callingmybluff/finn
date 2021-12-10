@@ -51,6 +51,11 @@ export const Link = styled(NavLink)`
   padding: 1rem 1rem;
 `
 
+export const LogoContainer = styled(Link)`
+  display: flex;
+  align-items: center;
+`
+
 export const LinkText = styled.p``
 
 export const Bars = styled(FaBars)`

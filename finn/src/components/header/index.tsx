@@ -3,6 +3,7 @@ import React from 'react'
 import {
   Nav,
   Link,
+  LogoContainer,
   RightMenu,
   LeftMenu,
   LinkText,
@@ -40,9 +41,9 @@ const linksLeft = [
 
 
 const Header = () => <Nav>
-  <Link to='/'>
+  <LogoContainer to='/'>
     <img src='images/logo.svg' alt='Logo' />
-  </Link>
+  </LogoContainer>
   <Dropmenu>
     <DropdownContainer>
       {
