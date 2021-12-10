@@ -40,6 +40,7 @@ export const PartLink = Styled.div`
   color: ${props => props.theme.color.neutral.gray};
   font-weight: ${props => props.theme.font.weight.light};
   padding-bottom: 1ex;
+  cursor: pointer;
 
   text-align: left;
   @media screen and (max-width: ${props => props.theme.size.mobile}) {
@@ -58,4 +59,5 @@ export const SocialMedia = Styled.div`
 `
 
 export const SocialMediaIcon = Styled.img`
+  cursor: pointer;
 `

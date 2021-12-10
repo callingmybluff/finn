@@ -12,6 +12,7 @@ const Button = (radius: string, paddingMargin: string) => Styled(NavLink)`
   margin-right: ${paddingMargin};
   padding: ${paddingMargin};
   height: min-content;
+  cursor: pointer;
 `
 
 const BigCornerButton = Button('25ex', '1ex'),
